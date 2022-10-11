@@ -14,5 +14,4 @@ public class Employee {
     private String mail;
 
     private String password;
-
 }
