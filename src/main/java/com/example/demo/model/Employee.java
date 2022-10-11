@@ -5,86 +5,26 @@ import lombok.Data;
 @Data
 public class Employee {
 
-	private Integer id;
-	
-	private String firstName;
-	
-	private String lastName;
-	
-	private String mail;
-	
-	private String password;
+    private Integer id;
 
-	/**
-	 * @return the id
-	 */
-	public Integer getId() {
-		return id;
-	}
+    private String firstName;
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    private String lastName;
 
-	/**
-	 * @return the firstName
-	 */
-	public String getFirstName() {
-		return firstName;
-	}
+    private String mail;
 
-	/**
-	 * @param firstName the firstName to set
-	 */
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    private String password;
 
-	/**
-	 * @return the lastName
-	 */
-	public String getLastName() {
-		return lastName;
-	}
+    public int getId() {
+        return id;
+    }
 
-	/**
-	 * @param lastName the lastName to set
-	 */
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public Object getPassword() {
+        return password;
+    }
 
-	/**
-	 * @return the mail
-	 */
-	public String getMail() {
-		return mail;
-	}
+    public void setPassword(Object password) {} {
+        this.password = password;
+    }
 
-	/**
-	 * @param mail the mail to set
-	 */
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	/**
-	 * @return the password
-	 */
-	public String getPassword() {
-		return password;
-	}
-
-	/**
-	 * @param password the password to set
-	 */
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
-	
-	
 }
