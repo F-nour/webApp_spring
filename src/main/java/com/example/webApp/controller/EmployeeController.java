@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.webApp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.model.Employee;
-import com.example.demo.service.EmployeeService;
+import com.example.webApp.model.Employee;
+import com.example.webApp.service.EmployeeService;
 
 import lombok.Data;
 
@@ -20,11 +20,12 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService service;
-	
+
 	@GetMapping("/")
 	public String home(Model model) {
 		Iterable<Employee> listEmployee = service.getEmployees();
 		model.addAttribute("employees", listEmployee);
+		System.out.println(listEmployee);
 		return "home";
 	}
 
@@ -51,8 +52,6 @@ public class EmployeeController {
 	@PostMapping("/saveEmployee")
 	public ModelAndView saveEmployee(@ModelAttribute Employee employee) {
 		if(employee.getId() != null) {
-			// Employee from update form has the password field not filled,
-			// so we fill it with the current password.
 			Employee current = service.getEmployee(employee.getId());
 			employee.setPassword(current.getPassword());
 		}
