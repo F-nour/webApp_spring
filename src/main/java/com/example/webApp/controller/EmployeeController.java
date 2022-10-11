@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.webApp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.demo.model.Employee;
-import com.example.demo.service.EmployeeService;
+import com.example.webApp.model.Employee;
+import com.example.webApp.service.EmployeeService;
 
 import lombok.Data;
 
@@ -20,7 +20,7 @@ public class EmployeeController {
 
 	@Autowired
 	private EmployeeService service;
-	
+
 	@GetMapping("/")
 	public String home(Model model) {
 		Iterable<Employee> listEmployee = service.getEmployees();

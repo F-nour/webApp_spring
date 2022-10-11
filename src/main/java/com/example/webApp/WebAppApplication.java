@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.webApp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,11 +10,11 @@ public class WebAppApplication implements CommandLineRunner {
 
 	@Autowired
 	private CustomProperties props;
-	
+
 	public static void main(String args) {
 		SpringApplication.run(WebAppApplication.class, args);
 	}
-	
+
 	@Override
 	public void run(String...args) throws Exception {
 		System.out.println(props.getApiUrl());
